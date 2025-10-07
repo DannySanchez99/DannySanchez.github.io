@@ -6,7 +6,7 @@ This site was built to showcase my journey as a **Software and Web Developer**, 
 ---
 
 ## 🚀 Live Website
-🔗 **[Visit my website here](https://DannySanchez99.github.io)**
+🔗 **[Visit my website here](https://DannySanchez.github.io)**
 
 ---
 
