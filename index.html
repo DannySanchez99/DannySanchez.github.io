@@ -1,20 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danny Sanchez Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="sample_portafolio.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Danny Sanchez | Software & Web Developer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
+    <!-- Header con menú de navegación -->
     <header>
         <h1>Danny Sanchez</h1>
-        <p>Software and Web Developer learning about HTML, CSS and JS and derivatives</p>
+        <p>Software and Web Developer learning about HTML, CSS and JS and derivatives.</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="skills">
+    <!-- About Me -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            Passionate about building modern web experiences and improving my skills in front-end and back-end technologies. 
+            Currently learning advanced concepts in HTML, CSS, JavaScript, Python, and SQL.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
         <h2>Skills</h2>
         <ul>
             <li>HTML</li>
@@ -25,34 +44,65 @@
         </ul>
     </section>
 
-    <section id="portfolio">
-        <h2>Portfolio Photos</h2>
-        <div class="photo-grid">
-            <img src="Images/photo1.png" alt="Photo 1">
-            <img src="Images/photo2.png" alt="Photo 2">
-            <img src="Images/photo3.png" alt="Photo 3">
-            <img src="Images/photo4.png" alt="Photo 4">
-            <img src="Images/photo5.png" alt="Photo 5">
+    <!-- Portfolio slideshow -->
+    <section id="portfolio" class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="images/photo1.jpg" alt="Project Image 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/photo2.jpg" alt="Project Image 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/photo3.jpg" alt="Project Image 3">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/photo4.jpg" alt="Project Image 4">
+        </div>
+        <div class="mySlides fade">
+            <img src="images/photo5.jpg" alt="Project Image 5">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </section>
+
+    <div class="dots-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <button class="Pop_Up_Button" onclick="openForm()">Contact Me</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="mailto:Danny.SanchezMelo@my-aolcc.com" method="post" class="form-container">
+                <h2>Get in Touch</h2>
+
+                <label for="name"><b>Name</b></label>
+                <input type="text" placeholder="Your name" name="name" required>
+
+                <label for="email"><b>Email</b></label>
+                <input type="email" placeholder="Your email" name="email" required>
+
+                <label for="message"><b>Message</b></label>
+                <textarea placeholder="Write something..." name="message" required></textarea>
+
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
         </div>
     </section>
 
-    <button class="Pop_Up_Button" onclick="openForm()">Contact Me</button>
-
-    <!-- Contact Form -->
-    <div class="form-popup" id="myForm">
-        <form class="form-container">
-            <h2>Contact Me</h2>
-
-            <label for="email"><b>Email</b></label>
-            <input type="email" placeholder="Enter Email" name="email" required>
-
-            <label for="msg"><b>Message</b></label>
-            <textarea placeholder="Write something..." name="msg" required></textarea>
-
-            <button type="submit" class="btn">Send</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-    </div>
-
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Danny Sanchez | 
+            <a href="https://www.linkedin.com/in/danny-sanchez-31b249268" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/DannySanchez" target="_blank">GitHub</a>
+        </p>
+    </footer>
 </body>
 </html>
