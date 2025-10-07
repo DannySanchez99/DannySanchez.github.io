@@ -1,101 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danny Sanchez | Software & Web Developer</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header con menú de navegación -->
+    <!-- Header -->
     <header>
         <h1>Danny Sanchez</h1>
         <p>Software and Web Developer learning about HTML, CSS and JS and derivatives.</p>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <nav class="tabs-nav">
+            <button class="tab-link active" data-tab="about">About Me</button>
+            <button class="tab-link" data-tab="skills">Skills</button>
+            <button class="tab-link" data-tab="portfolio">Portfolio</button>
+            <button class="tab-link" data-tab="contact">Contact</button>
         </nav>
     </header>
 
-    <!-- About Me -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            Passionate about building modern web experiences and improving my skills in front-end and back-end technologies. 
-            Currently learning advanced concepts in HTML, CSS, JavaScript, Python, and SQL.
-        </p>
-    </section>
+    <!-- Tab content -->
+    <main>
+        <!-- About Me -->
+        <section id="about" class="tab-content active">
+            <h2>About Me</h2>
+            <p>
+                Passionate about building modern web experiences and improving my skills in front-end and back-end technologies. 
+                Currently learning advanced concepts in HTML, CSS, JavaScript, Python, and SQL.
+            </p>
+        </section>
 
-    <!-- Skills -->
-    <section id="skills" class="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>SQL</li>
-        </ul>
-    </section>
+        <!-- Skills -->
+        <section id="skills" class="tab-content">
+            <h2>Skills</h2>
+            <ul class="skills-list">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+                <li>SQL</li>
+            </ul>
+        </section>
 
-    <!-- Portfolio slideshow -->
-    <section id="portfolio" class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="images/photo1.jpg" alt="Project Image 1">
-        </div>
-        <div class="mySlides fade">
-            <img src="images/photo2.jpg" alt="Project Image 2">
-        </div>
-        <div class="mySlides fade">
-            <img src="images/photo3.jpg" alt="Project Image 3">
-        </div>
-        <div class="mySlides fade">
-            <img src="images/photo4.jpg" alt="Project Image 4">
-        </div>
-        <div class="mySlides fade">
-            <img src="images/photo5.jpg" alt="Project Image 5">
-        </div>
+        <!-- Portfolio -->
+        <section id="portfolio" class="tab-content">
+            <h2>Portfolio</h2>
+            <div class="slideshow-container">
+                <div class="mySlides fade"><img src="images/photo1.jpg" alt="Project Image 1"></div>
+                <div class="mySlides fade"><img src="images/photo2.jpg" alt="Project Image 2"></div>
+                <div class="mySlides fade"><img src="images/photo3.jpg" alt="Project Image 3"></div>
+                <div class="mySlides fade"><img src="images/photo4.jpg" alt="Project Image 4"></div>
+                <div class="mySlides fade"><img src="images/photo5.jpg" alt="Project Image 5"></div>
 
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </section>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+        </section>
 
-    <div class="dots-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-    </div>
+        <!-- Contact -->
+        <section id="contact" class="tab-content">
+            <button class="Pop_Up_Button" onclick="openForm()">Contact Me</button>
+            <div class="form-popup" id="myForm">
+                <form action="mailto:Danny.SanchezMelo@my-aolcc.com" method="post" class="form-container">
+                    <h2>Get in Touch</h2>
+                    <label for="name"><b>Name</b></label>
+                    <input type="text" placeholder="Your name" name="name" required>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <button class="Pop_Up_Button" onclick="openForm()">Contact Me</button>
+                    <label for="email"><b>Email</b></label>
+                    <input type="email" placeholder="Your email" name="email" required>
 
-        <div class="form-popup" id="myForm">
-            <form action="mailto:Danny.SanchezMelo@my-aolcc.com" method="post" class="form-container">
-                <h2>Get in Touch</h2>
+                    <label for="message"><b>Message</b></label>
+                    <textarea placeholder="Write something..." name="message" required></textarea>
 
-                <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Your name" name="name" required>
-
-                <label for="email"><b>Email</b></label>
-                <input type="email" placeholder="Your email" name="email" required>
-
-                <label for="message"><b>Message</b></label>
-                <textarea placeholder="Write something..." name="message" required></textarea>
-
-                <button type="submit" class="btn">Send</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-            </form>
-        </div>
-    </section>
+                    <button type="submit" class="btn">Send</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
